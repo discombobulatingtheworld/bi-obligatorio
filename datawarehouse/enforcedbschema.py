@@ -1,5 +1,6 @@
 from psycopg2 import connect
 from dotenv import dotenv_values
+from os.path import abspath, join, dirname
 
 
 def _create_schemas(conn, config):
@@ -18,23 +19,30 @@ def _create_schemas(conn, config):
 
 def _create_staging_tables(conn, config):
     table_script_files = {
-        'circuits': 'datawarehouse/sql/staging.circuits.sql',
-        'constructor_results': 'datawarehouse/sql/staging.constructor_results.sql',
-        'constructor_standings': 'datawarehouse/sql/staging.constructor_standings.sql',
-        'constructors': 'datawarehouse/sql/staging.constructors.sql',
-        'driver_standings': 'datawarehouse/sql/staging.driver_standings.sql',
-        'drivers': 'datawarehouse/sql/staging.drivers.sql',
-        'lap_times': 'datawarehouse/sql/staging.lap_times.sql',
-        'pit_stops': 'datawarehouse/sql/staging.pit_stops.sql',
-        'qualifying': 'datawarehouse/sql/staging.qualifying.sql',
-        'races': 'datawarehouse/sql/staging.races.sql',
-        'results': 'datawarehouse/sql/staging.results.sql',
-        'seasons': 'datawarehouse/sql/staging.seasons.sql',
-        'sprint_results': 'datawarehouse/sql/staging.sprint_results.sql',
-        'status': 'datawarehouse/sql/staging.status.sql'
+        'circuits': 'staging.circuits.sql',
+        'constructor_results': 'staging.constructor_results.sql',
+        'constructor_standings': 'staging.constructor_standings.sql',
+        'constructors': 'staging.constructors.sql',
+        'driver_standings': 'staging.driver_standings.sql',
+        'drivers': 'staging.drivers.sql',
+        'lap_times': 'staging.lap_times.sql',
+        'pit_stops': 'staging.pit_stops.sql',
+        'qualifying': 'staging.qualifying.sql',
+        'races': 'staging.races.sql',
+        'results': 'staging.results.sql',
+        'seasons': 'staging.seasons.sql',
+        'sprint_results': 'staging.sprint_results.sql',
+        'status': 'staging.status.sql'
     }
 
-    pass
+    cursor = conn.cursor()
+
+    for table, script in table_script_files.items():
+        with open(abspath(join(dirname(__file__), 'scripts', script)), 'r') as f:
+            cursor.execute(f.read())
+
+    conn.commit()
+    cursor.close()
 
 def _create_datawarehouse_tables(conn, config):
 
@@ -50,6 +58,7 @@ def enforce_schema(config):
     )
 
     _create_schemas(conn, config)
+    _create_staging_tables(conn, config)
 
     conn.close()
 

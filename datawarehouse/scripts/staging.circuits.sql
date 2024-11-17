@@ -1,4 +1,4 @@
-CREATE TABLE staging.circuits (
+CREATE TABLE IF NOT EXISTS staging.circuits (
     circuitId NUMERIC(32, 0),
     circuitRef VARCHAR(64),
     "name" VARCHAR(64),

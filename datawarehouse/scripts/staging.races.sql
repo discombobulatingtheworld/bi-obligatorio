@@ -1,4 +1,4 @@
-CREATE TABLE staging.races (
+CREATE TABLE IF NOT EXISTS staging.races (
     raceId NUMERIC(32, 0),
     "year" NUMERIC(32, 0),
     round NUMERIC(32, 0),
