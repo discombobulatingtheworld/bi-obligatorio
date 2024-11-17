@@ -1,4 +1,4 @@
-CREATE TABLE staging.constructor_standings (
+CREATE TABLE IF NOT EXISTS staging.constructor_standings (
     constructorStandingsId NUMERIC(32, 0),
     raceId NUMERIC(32, 0),
     constructorId NUMERIC(32, 0),

@@ -1,4 +1,4 @@
-CREATE TABLE staging.pit_stops (
+CREATE TABLE IF NOT EXISTS staging.pit_stops (
     raceId NUMERIC(32, 0),
     driverId NUMERIC(32, 0),
     stop NUMERIC(32, 0),

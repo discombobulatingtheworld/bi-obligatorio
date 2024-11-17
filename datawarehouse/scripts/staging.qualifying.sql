@@ -1,4 +1,4 @@
-CREATE TABLE staging.qualifying (
+CREATE TABLE IF NOT EXISTS staging.qualifying (
     qualifyId NUMERIC(32, 0),
     raceId NUMERIC(32, 0),
     driverId NUMERIC(32, 0),

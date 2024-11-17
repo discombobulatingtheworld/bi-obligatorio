@@ -1,4 +1,4 @@
-CREATE TABLE staging.drivers (
+CREATE TABLE IF NOT EXISTS staging.drivers (
     driverId NUMERIC(32, 0),
     driverRef VARCHAR(32),
     "number" VARCHAR(8),
