@@ -558,10 +558,10 @@
         <type>Integer</type>
         <format>#</format>
         <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
+        <decimal>.</decimal>
+        <group>,</group>
         <length>32</length>
-        <precision>0</precision>
+        <precision>4</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
