@@ -1,0 +1,20 @@
+CREATE TABLE staging.races (
+    raceId NUMERIC(32, 0),
+    "year" NUMERIC(32, 0),
+    round NUMERIC(32, 0),
+    circuitId NUMERIC(32, 0),
+    "name" VARCHAR(64),
+    "date" TIMESTAMP,
+    "time" VARCHAR(16),
+    url VARCHAR(128),
+    fp1_date VARCHAR(16),
+    fp1_time VARCHAR(16),
+    fp2_date VARCHAR(16),
+    fp2_time VARCHAR(16),
+    fp3_date VARCHAR(16),
+    fp3_time VARCHAR(16),
+    quali_date VARCHAR(16),
+    quali_time VARCHAR(16),
+    sprint_date VARCHAR(16),
+    sprint_time VARCHAR(16)
+);
