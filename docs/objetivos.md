@@ -17,7 +17,7 @@
     - Fecha
     - Carrera
 - Hechos:
-    - Standings de Conductores
+    - Resultados de Conductores
 
 ### Pilotos con más paradas en un período de tiempo
 
@@ -33,7 +33,8 @@
     - Piloto
     - Constructores
 - Hechos
-    - Standings de Conductores
+    - Resultados de Constructores
+    - Resultados de Conductores
     - Paradas
 
 ### Resultados finales de campeonatos
@@ -42,17 +43,17 @@
     - Temporada
     - Carrera
 - Hechos:
-    - Standings de Constructores
-    - Standings de Conductores
+    - Resultados de Constructores
+    - Resultados de Conductores
 
 ### Resultados de constructores
 
 - Dimensiones:
     - Constructor
     - Fecha
-    - Carrera ?
+    - Carrera
 - Hechos:
-    - Standings de Constructores
+    - Resultados de Constructores
 
 ### Si fuera el director de equipo y debe planificar las estrategias de parada, ¿cuál sería la mejor estrategia para cada circuito?
 
@@ -61,7 +62,7 @@
     - Circuito
 - Hechos:
     - Parada
-    - Resultados ?
+    - Resultados de Constructores / Conductores ?
 
 ### Análisis que permita decidir cuestiones del estilo "Aquellos pilotos que siempre ganaron en Canadá, han terminado ganando el campeonato mundial", o más complejo "Aquellos pilotos que han ganado en Canadá, San Marino y Nürburgring, pero no en Hockenheim, han ganado el campeonato mundial"
 
@@ -71,7 +72,7 @@
     - Temporada
     - Circuito
 - Hechos:
-    - Standings de Conductores
+    - Resultados de Conductores
 
 ### Los pilotos con mejor tiempo, ¿terminaron ganando la carrera? ¿terminan en el top 3?
 
@@ -80,14 +81,13 @@
     - Carrera
 - Hechos
     - Resultados
-    - Standing de Conductores
 
 ### Dividiendo las vueltas de una carrera en tercios, ¿en que tercio se da la mayoría de los récords de vuelta?
 
 - Dimensiones
     - Carrera
 - Hechos
-    - Clasificatorias
+    - Resultados de Conductores
 
 ### Dentro de los pilotos que no clasificaron en las primeras 3 posiciones y terminaron la carrera en las primeras 3 posiciones, ¿en qué posición de récord de vuelta estuvo?
 
@@ -104,7 +104,7 @@
     - Piloto
     - Nacionalidad
 - Hechos
-    - Standings de Conductores
+    - Resultados de Conductores
 
 ### Alguno más que les resulte interesante
 
@@ -113,18 +113,56 @@
 ### Dimensiones
 
 - Piloto
+    - driverId
+    - forname
+    - surname
+    - nationality
 - Fecha
+    - isoCode
+    - year
+    - month
+    - day
 - Carrera
+    - raceId
+    - date
+    - year
+    - name
+    - circuitId
 - Constructores
+    - constructorId
+    - name
+    - nationality
 - Temporada
+    - year
 - Circuito
-- Nacionalidad
+    - circuitId
+    - name
+    - country
 
 ### Hechos
 
-- Carrera (?)
-- Standings de Conductores
-- Standings de Constructores
 - Parada
-- Resultados
+    - raceId
+    - driverId
+    - time
+    - lap
+    - milliseconds
+- Resultados de Conductores
+    - resultId
+    - raceId
+    - driverId
+    - points
+    - position
+    - milliseconds
+    - laps
+    - fastestLap
+- Resultados de Constructores
+    - constructorResultsId
+    - raceId
+    - constructorId
+    - points
 - Clasificatorias
+    - qualifyId
+    - raceId
+    - driverId
+    - position
