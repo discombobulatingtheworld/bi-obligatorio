@@ -435,6 +435,57 @@
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>obligatorio</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>obligatorio</database>
+    <port>5432</port>
+    <username>admin</username>
+    <password>Encrypted 7563753230323421627573696e657373696e74656c6c6965dbf6ccad44c89088a21eaf64d180a6d5</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
   </order>
   <step>
@@ -448,8 +499,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
-    <sql>SELECT &lt;values> FROM &lt;table name> WHERE &lt;conditions></sql>
+    <connection>obligatorio</connection>
+    <sql>SELECT
+  DR.conductor_id
+, CRR.Raceid
+FROM datawarehouse.dt_conductor as DR
+	Inner join datawarehouse.dt_carrera as CRR
+on 
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
