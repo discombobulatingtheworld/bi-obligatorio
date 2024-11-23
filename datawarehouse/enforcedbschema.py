@@ -23,7 +23,9 @@ def _create_schemas(conn, config):
 def _create_tables(conn):
     cursor = conn.cursor()
 
-    files = listdir(abspath(join(dirname(__file__), 'scripts')))
+    # files = listdir(abspath(join(dirname(__file__), 'scripts')))
+    files = [ abspath(join(dirname(__file__), 'scripts', 'todo.sql')) ] 
+    
 
     for script in files:
         path = abspath(join(dirname(__file__), 'scripts', script))

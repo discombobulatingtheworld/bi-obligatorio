@@ -473,7 +473,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\lovit\Downloads\Todo esto\bi-obligatorio\data\races.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}\..\data\races.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -492,9 +492,9 @@
         <name>raceId</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -503,9 +503,9 @@
         <name>year</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -514,9 +514,9 @@
         <name>round</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -525,9 +525,9 @@
         <name>circuitId</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>15</length>
         <precision>0</precision>
         <trim_type>none</trim_type>
@@ -536,21 +536,21 @@
         <name>name</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>24</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>29</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>date</name>
-        <type>Date</type>
-        <format>yyyy-MM-dd</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>-1</length>
+        <type>String</type>
+        <format/>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>30</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -558,9 +558,9 @@
         <name>time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
         <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -569,10 +569,10 @@
         <name>url</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>58</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>63</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -580,10 +580,10 @@
         <name>fp1_date</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -591,10 +591,10 @@
         <name>fp1_time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -602,10 +602,10 @@
         <name>fp2_date</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -613,10 +613,10 @@
         <name>fp2_time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -624,10 +624,10 @@
         <name>fp3_date</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -635,10 +635,10 @@
         <name>fp3_time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -646,10 +646,10 @@
         <name>quali_date</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -657,10 +657,10 @@
         <name>quali_time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -668,10 +668,10 @@
         <name>sprint_date</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -679,10 +679,10 @@
         <name>sprint_time</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>2</length>
+        <currency>NU$</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>

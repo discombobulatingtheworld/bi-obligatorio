@@ -478,6 +478,7 @@
   circuitid
 , "name"
 , country
+
 FROM staging.circuits
 </sql>
     <limit>0</limit>
@@ -584,7 +585,7 @@ FROM staging.circuits
     </partitioning>
     <connection>obligatorio</connection>
     <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>datawarehouse</schema>
       <table>DT_Circuito</table>
