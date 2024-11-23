@@ -310,13 +310,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>FT_parada</name>
+      <name>trnDwFTParada</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
+      <filename>${Internal.Entry.Current.Directory}\trnDwFTParada.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -336,8 +336,11 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -346,13 +349,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>FT_ResultadoDeConductores</name>
+      <name>trnDwFTResultadoConductor</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
+      <filename>${Internal.Entry.Current.Directory}\trnDwFTResultadoConductor.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -372,8 +375,11 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -382,13 +388,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>FT_ResultadosDeConstructores</name>
+      <name>trnDwFTResultadoConstructor</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
+      <filename>${Internal.Entry.Current.Directory}\trnDwFTResultadoConstructor.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -408,8 +414,11 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -418,13 +427,13 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>FT_Clasificatorias</name>
+      <name>trnDwFTClasificatoria</name>
       <description/>
       <type>TRANS</type>
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename/>
+      <filename>${Internal.Entry.Current.Directory}\trnDwFTClasificatoria.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -444,8 +453,11 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration/>
+      <run_configuration>Pentaho local</run_configuration>
       <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -457,7 +469,7 @@
   <hops>
     <hop>
       <from>Start</from>
-      <to>FT_parada</to>
+      <to>trnDwFTParada</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -465,8 +477,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>FT_parada</from>
-      <to>FT_ResultadoDeConductores</to>
+      <from>trnDwFTParada</from>
+      <to>trnDwFTResultadoConductor</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -474,8 +486,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>FT_ResultadoDeConductores</from>
-      <to>FT_ResultadosDeConstructores</to>
+      <from>trnDwFTResultadoConductor</from>
+      <to>trnDwFTResultadoConstructor</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -483,8 +495,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>FT_ResultadosDeConstructores</from>
-      <to>FT_Clasificatorias</to>
+      <from>trnDwFTResultadoConstructor</from>
+      <to>trnDwFTClasificatoria</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

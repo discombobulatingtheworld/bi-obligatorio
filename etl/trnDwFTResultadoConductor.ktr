@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>trnDwDTConstructor</name>
+    <name>trnDwFTResultadoConductor</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -428,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2024/11/20 18:25:49.300</created_date>
+    <created_date>2024/11/23 17:05:56.021</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2024/11/20 18:25:49.300</modified_date>
+    <modified_date>2024/11/23 17:05:56.021</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -463,71 +463,6 @@
     </hop>
   </order>
   <step>
-    <name>Insert / update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>obligatorio</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema>datawarehouse</schema>
-      <table>DT_Constructor</table>
-      <key>
-        <name>constructorid</name>
-        <field>Constructor_Id</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>name</name>
-        <field>Constructor_Nombre</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>nationality</name>
-        <field>Constructor_Nacionalidad</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>Constructor_Id</name>
-        <rename>constructorid</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>Constructor_Nombre</name>
-        <rename>name</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>Constructor_Nacionalidad</name>
-        <rename>nationality</rename>
-        <update>N</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Table input</name>
     <type>TableInput</type>
     <description/>
@@ -540,10 +475,20 @@
     </partitioning>
     <connection>obligatorio</connection>
     <sql>SELECT
-  constructorid
-, "name"
-, nationality
-FROM staging.constructors
+  resultid
+, RS.raceid
+, RS.driverid
+, "position"
+, points
+, laps
+, milliseconds
+, fastestlap
+FROM staging.results AS RS
+LEFT JOIN datawarehouse.dt_carrera AS CA
+	ON RS.raceid = CA.carrera_id
+LEFT JOIN datawarehouse.dt_conductor AS CO
+	ON RS.driverid = CO.conductor_id
+
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -555,11 +500,57 @@ FROM staging.constructors
       <value-meta>
         <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>constructorid</name>
+        <name>resultid</name>
         <length>32</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>constructorid</comments>
+        <comments>resultid</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_UY</date_format_locale>
+        <date_format_timezone>America/Montevideo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>raceid</name>
+        <length>32</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>raceid</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_UY</date_format_locale>
+        <date_format_timezone>America/Montevideo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>driverid</name>
+        <length>32</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>driverid</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol/>
@@ -578,11 +569,80 @@ FROM staging.constructors
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>name</name>
-        <length>32</length>
+        <name>position</name>
+        <length>8</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>name</comments>
+        <comments>position</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_UY</date_format_locale>
+        <date_format_timezone>America/Montevideo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>points</name>
+        <length>32</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>points</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_UY</date_format_locale>
+        <date_format_timezone>America/Montevideo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>laps</name>
+        <length>32</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>laps</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>es_UY</date_format_locale>
+        <date_format_timezone>America/Montevideo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>milliseconds</name>
+        <length>16</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>milliseconds</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -601,11 +661,11 @@ FROM staging.constructors
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>nationality</name>
-        <length>32</length>
+        <name>fastestlap</name>
+        <length>8</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>nationality</comments>
+        <comments>fastestlap</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -631,8 +691,128 @@ FROM staging.constructors
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>176</yloc>
+      <xloc>200</xloc>
+      <yloc>100</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>obligatorio</connection>
+    <commit>1000</commit>
+    <update_bypassed>Y</update_bypassed>
+    <lookup>
+      <schema>datawarehouse</schema>
+      <table>FT_ResultadoConductor</table>
+      <key>
+        <name>resultid</name>
+        <field>ResultadoConductor_Id</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>raceid</name>
+        <field>ResultadoConductor_CarreraId</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>driverid</name>
+        <field>ResultadoConductor_ConductorId</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>position</name>
+        <field>ResultadoConductor_Posicion</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>points</name>
+        <field>ResultadoConductor_Puntos</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>laps</name>
+        <field>ResultadoConductor_Vueltas</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>milliseconds</name>
+        <field>ResultadoConductor_Milisegundos</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>fastestlap</name>
+        <field>ResultadoConductor_VueltaMasRapida</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>ResultadoConductor_Id</name>
+        <rename>resultid</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_CarreraId</name>
+        <rename>raceid</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_ConductorId</name>
+        <rename>driverid</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_Posicion</name>
+        <rename>position</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_Puntos</name>
+        <rename>points</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_Vueltas</name>
+        <rename>laps</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_Milisegundos</name>
+        <rename>milliseconds</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ResultadoConductor_VueltaMasRapida</name>
+        <rename>fastestlap</rename>
+        <update>N</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
