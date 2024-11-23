@@ -1,6 +1,7 @@
 from psycopg2 import connect
 from dotenv import dotenv_values
-from os.path import abspath, join, dirname
+from os.path import abspath, join, dirname, getsize
+from os import listdir
 
 
 def _create_schemas(conn, config):
@@ -12,41 +13,33 @@ def _create_schemas(conn, config):
     cursor = conn.cursor()
 
     for schema in schemas.values():
-        cursor.execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
+        print(f"Creating schema {schema}")
+        cursor.execute(f"DROP SCHEMA IF EXISTS {schema} CASCADE")
+        cursor.execute(f"CREATE SCHEMA {schema}")
 
     conn.commit()
     cursor.close()
 
-def _create_staging_tables(conn, config):
-    table_script_files = {
-        'circuits': 'staging.circuits.sql',
-        'constructor_results': 'staging.constructor_results.sql',
-        'constructor_standings': 'staging.constructor_standings.sql',
-        'constructors': 'staging.constructors.sql',
-        'driver_standings': 'staging.driver_standings.sql',
-        'drivers': 'staging.drivers.sql',
-        'lap_times': 'staging.lap_times.sql',
-        'pit_stops': 'staging.pit_stops.sql',
-        'qualifying': 'staging.qualifying.sql',
-        'races': 'staging.races.sql',
-        'results': 'staging.results.sql',
-        'seasons': 'staging.seasons.sql',
-        'sprint_results': 'staging.sprint_results.sql',
-        'status': 'staging.status.sql'
-    }
-
+def _create_tables(conn):
     cursor = conn.cursor()
 
-    for table, script in table_script_files.items():
-        with open(abspath(join(dirname(__file__), 'scripts', script)), 'r') as f:
-            cursor.execute(f.read())
+    files = listdir(abspath(join(dirname(__file__), 'scripts')))
+
+    for script in files:
+        path = abspath(join(dirname(__file__), 'scripts', script))
+        if getsize(path) == 0:
+            print(f"Skipping {script} as it is empty")
+            continue
+        with open(path, 'r') as f:
+            try:
+                print(f"Creating table {script}")
+                cursor.execute(f.read())
+            except Exception as e:
+                print(f"Error creating table {script}: {e}")
+                break
 
     conn.commit()
     cursor.close()
-
-def _create_datawarehouse_tables(conn, config):
-
-    pass
 
 def enforce_schema(config):
     conn = connect(
@@ -58,7 +51,7 @@ def enforce_schema(config):
     )
 
     _create_schemas(conn, config)
-    _create_staging_tables(conn, config)
+    _create_tables(conn)
 
     conn.close()
 

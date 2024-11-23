@@ -45,5 +45,3 @@ CREATE INDEX idx_DT_Fecha_lookup ON datawarehouse.DT_Fecha(
     FiscalYearMonth,
     FiscalYearQtr
 );
-
-F
