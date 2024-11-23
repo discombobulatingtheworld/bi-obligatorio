@@ -511,7 +511,7 @@
 , cast(R."year" as int) as "year"
 , cast(R.circuitid as int) as circuitid
 , R."name"
-, REGEXP_REPLACE(R."date", '-', '', 'g') as "date"
+, date
 FROM staging.races as R
 LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.circuito_id as int)
 </sql>
@@ -531,8 +531,8 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <origin>Entrada Tabla</origin>
         <comments>raceid</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -541,7 +541,7 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>es_ES</date_format_locale>
+        <date_format_locale>en_US</date_format_locale>
         <date_format_timezone>America/Montevideo</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
@@ -554,8 +554,8 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <origin>Entrada Tabla</origin>
         <comments>year</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -564,7 +564,7 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>es_ES</date_format_locale>
+        <date_format_locale>en_US</date_format_locale>
         <date_format_timezone>America/Montevideo</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
@@ -577,8 +577,8 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <origin>Entrada Tabla</origin>
         <comments>circuitid</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -587,7 +587,7 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>es_ES</date_format_locale>
+        <date_format_locale>en_US</date_format_locale>
         <date_format_timezone>America/Montevideo</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
@@ -600,8 +600,8 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <origin>Entrada Tabla</origin>
         <comments>name</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -610,21 +610,21 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>es_ES</date_format_locale>
+        <date_format_locale>en_US</date_format_locale>
         <date_format_timezone>America/Montevideo</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>date</name>
-        <length>2147483647</length>
+        <length>6</length>
         <precision>-1</precision>
         <origin>Entrada Tabla</origin>
         <comments>date</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -633,7 +633,7 @@ LEFT JOIN datawarehouse.dt_circuito as C on cast(R.circuitid as int) = cast(C.ci
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>es_ES</date_format_locale>
+        <date_format_locale>en_US</date_format_locale>
         <date_format_timezone>America/Montevideo</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
