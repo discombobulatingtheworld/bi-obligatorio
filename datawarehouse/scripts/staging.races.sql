@@ -1,10 +1,10 @@
-CREATE TABLE IF NOT EXISTS staging.races (
+CREATE TABLE staging.races (
     raceId NUMERIC(32, 0),
     "year" NUMERIC(32, 0),
     round NUMERIC(32, 0),
     circuitId NUMERIC(32, 0),
     "name" VARCHAR(64),
-    "date" TIMESTAMP,
+    "date" VARCHAR(10),
     "time" VARCHAR(16),
     url VARCHAR(128),
     fp1_date VARCHAR(16),

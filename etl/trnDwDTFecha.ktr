@@ -522,34 +522,34 @@
     <fields>
       <field>
         <name>﻿DateKey</name>
-        <type>Date</type>
-        <format>yyyyMMdd</format>
+        <type>Integer</type>
+        <format>#</format>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>8</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>FullDate</name>
-        <type>Date</type>
-        <format>dd/MM/yyyy</format>
+        <type>String</type>
+        <format/>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>-1</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>DateName</name>
-        <type>Date</type>
-        <format>yyyy/MM/dd</format>
+        <type>String</type>
+        <format/>
         <currency>€</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>-1</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -779,7 +779,7 @@
     </partitioning>
     <connection>bi-obligatorio</connection>
     <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>datawarehouse</schema>
       <table>DT_Fecha</table>
