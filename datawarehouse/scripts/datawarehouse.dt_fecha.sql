@@ -1,7 +1,7 @@
 CREATE TABLE datawarehouse.DT_Fecha (
-    DateKey TIMESTAMP,
-    FullDate TIMESTAMP,
-    DateName TIMESTAMP,
+    DateKey DOUBLE PRECISION,
+    FullDate VARCHAR(10),
+    DateName VARCHAR(10),
     DayOfWeek BIGINT,
     DayNameOfWeek VARCHAR(9),
     DayOfMonth BIGINT,
@@ -45,3 +45,5 @@ CREATE INDEX idx_DT_Fecha_lookup ON datawarehouse.DT_Fecha(
     FiscalYearMonth,
     FiscalYearQtr
 );
+
+F
