@@ -1,4 +1,4 @@
-﻿DateKey;FullDate;DateName;DayOfWeek;DayNameOfWeek;DayOfMonth;DayOfYear;WeekdayWeekend;WeekOfYear;MonthName;MonthOfYear;IsLastDayOfMonth;CalendarQuarter;CalendarYear;CalendarYearMonth;CalendarYearQtr;FiscalMonthOfYear;FiscalQuarter;FiscalYear;FiscalYearMonth;FiscalYearQtr
+DateKey;FullDate;DateName;DayOfWeek;DayNameOfWeek;DayOfMonth;DayOfYear;WeekdayWeekend;WeekOfYear;MonthName;MonthOfYear;IsLastDayOfMonth;CalendarQuarter;CalendarYear;CalendarYearMonth;CalendarYearQtr;FiscalMonthOfYear;FiscalQuarter;FiscalYear;FiscalYearMonth;FiscalYearQtr
 20100101;01/01/2010;2010/01/01;6;viernes;1; 1 ;Weekend;1;Enero;1;N;1;2010;2010-01;2010Q1;7;3;2010;FY2010-07;FY2010Q3
 20100102;02/01/2010;2010/01/02;7;sábado;2; 2 ;Weekend;1;Enero;1;N;1;2010;2010-01;2010Q1;7;3;2010;FY2010-07;FY2010Q3
 20100103;03/01/2010;2010/01/03;1;domingo;3; 3 ;Weekday;2;Enero;1;N;1;2010;2010-01;2010Q1;7;3;2010;FY2010-07;FY2010Q3

@@ -489,24 +489,24 @@
     <encoding/>
     <fields>
       <field>
-        <name>﻿DateKey</name>
+        <name>DateKey</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>-1</length>
-        <precision>8</precision>
+        <length>32</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>FullDate</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>10</length>
+        <length>32</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -514,10 +514,10 @@
         <name>DateName</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>10</length>
+        <length>32</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -525,7 +525,7 @@
         <name>DayOfWeek</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -536,10 +536,10 @@
         <name>DayNameOfWeek</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>9</length>
+        <length>10</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -547,7 +547,7 @@
         <name>DayOfMonth</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -558,7 +558,7 @@
         <name>DayOfYear</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -569,7 +569,7 @@
         <name>WeekdayWeekend</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>7</length>
@@ -580,7 +580,7 @@
         <name>WeekOfYear</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -591,7 +591,7 @@
         <name>MonthName</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>9</length>
@@ -602,7 +602,7 @@
         <name>MonthOfYear</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -613,7 +613,7 @@
         <name>IsLastDayOfMonth</name>
         <type>Boolean</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>-1</length>
@@ -624,7 +624,7 @@
         <name>CalendarQuarter</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -635,7 +635,7 @@
         <name>CalendarYear</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -646,7 +646,7 @@
         <name>CalendarYearMonth</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>7</length>
@@ -657,7 +657,7 @@
         <name>CalendarYearQtr</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>6</length>
@@ -668,7 +668,7 @@
         <name>FiscalMonthOfYear</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -679,7 +679,7 @@
         <name>FiscalQuarter</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -690,7 +690,7 @@
         <name>FiscalYear</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>15</length>
@@ -701,7 +701,7 @@
         <name>FiscalYearMonth</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>9</length>
@@ -712,7 +712,7 @@
         <name>FiscalYearQtr</name>
         <type>String</type>
         <format/>
-        <currency>€</currency>
+        <currency>NU$</currency>
         <decimal>,</decimal>
         <group>.</group>
         <length>8</length>
@@ -746,14 +746,14 @@
       <schema_name/>
     </partitioning>
     <connection>obligatorio</connection>
-    <commit>100</commit>
+    <commit>1000</commit>
     <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>datawarehouse</schema>
       <table>DT_Fecha</table>
       <key>
-        <name>﻿DateKey</name>
-        <field>﻿DateKey</field>
+        <name>DateKey</name>
+        <field>DateKey</field>
         <condition>=</condition>
         <name2/>
       </key>
@@ -878,8 +878,8 @@
         <name2/>
       </key>
       <value>
-        <name>﻿DateKey</name>
-        <rename>﻿DateKey</rename>
+        <name>DateKey</name>
+        <rename>DateKey</rename>
         <update>N</update>
       </value>
       <value>

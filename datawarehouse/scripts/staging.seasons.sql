@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS staging.seasons ("year" NUMERIC(32, 0), url VARCHAR(128));

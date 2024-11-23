@@ -608,7 +608,7 @@ FROM staging.drivers
     </partitioning>
     <connection>obligatorio</connection>
     <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema>datawarehouse</schema>
       <table>DT_Conductor</table>
@@ -637,22 +637,22 @@ FROM staging.drivers
         <name2/>
       </key>
       <value>
-        <name>driverid</name>
+        <name>Conductor_Id</name>
         <rename>driverid</rename>
         <update>N</update>
       </value>
       <value>
-        <name>forename</name>
+        <name>Conductor_Nombre</name>
         <rename>forename</rename>
         <update>N</update>
       </value>
       <value>
-        <name>surname</name>
+        <name>Conductor_Apellido</name>
         <rename>surname</rename>
         <update>N</update>
       </value>
       <value>
-        <name>nationality</name>
+        <name>Conductor_Nacionalidad</name>
         <rename>nationality</rename>
         <update>N</update>
       </value>
