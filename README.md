@@ -16,7 +16,7 @@ Por referencia, la consigna se encuentra en el archivo `docs/consigna.pdf`.
 
 El modelo de datos esta conformado por las siguientes tablas de dimension y hechos:
 
-![Modelo de datos](.\docs\datawarehouse_schema.png)
+![Modelo de datos](docs/datawarehouse_schema.png)
 
 ### Componentes
 
