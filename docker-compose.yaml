@@ -14,7 +14,7 @@ services:
     networks:
       - admin_network
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./volumnes/pgdata:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4:latest

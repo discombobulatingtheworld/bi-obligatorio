@@ -61,6 +61,9 @@ if ($LASTEXITCODE -eq 0) {
     exit
 }
 
+Write-Host "Waiting for database to start..."
+Start-Sleep -Seconds 30
+
 Write-Host "Checking database schema... " -NoNewline
 python .\datawarehouse\enforcedbschema.py > $null
 if ($LASTEXITCODE -eq 0) {
